@@ -17,7 +17,8 @@ Installation
 3.  Edit the file with nano or another text editor: ``` nano auto_upload.sh ```
 4.  Change the variables: ``` sshremote ``` , ``` remotepath ``` , ``` webpath ``` as detailed.
 5.  Make the script executable: ``` chmod +x auto_upload.sh ```
-6.  Launch the script in the background ``` bash auto_upload.sh & ```
+6.  Create the uploaded directory: ``` mkdir ~/uploaded/ ```
+7.  Launch the script in the background ``` bash auto_upload.sh & ```
 
 Contact
 --------
