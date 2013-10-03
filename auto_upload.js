@@ -12,7 +12,7 @@ var web_location = '' // if screenshots are to be accessed online then this is t
 /* end editable variables */
 
 fs.watch(desktop_directory, function (event, filename) {
-    if (event == 'change') {
+    if (event == 'rename') {
         if (filename.split('.').pop() == 'png') {
         	var original = fs.createReadStream(desktop_directory + filename);
         	var escaped = filename.replace(/\s/g, '-');
