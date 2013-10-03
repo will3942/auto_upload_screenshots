@@ -12,7 +12,7 @@ var web_location = '' // if screenshots are to be accessed online then this is t
 /* end editable variables */
 
 fs.watch(desktop_directory, function (event, filename) {
-    if (event == 'rename') {
+    if (event == 'change') {
         if (filename.split('.').pop() == 'png') {
         	var original = fs.createReadStream(desktop_directory + filename);
         	var escaped = filename.replace(/\s/g, '-');
@@ -35,6 +35,9 @@ fs.watch(desktop_directory, function (event, filename) {
                         console.log(error);
                     }
                 });
+            });
+            original.on('error', function(err) {
+                console.log(err);
             });
         }
     }
